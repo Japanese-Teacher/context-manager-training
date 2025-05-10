@@ -3,7 +3,7 @@ from typing_extensions import ParamSpec, TypeVar, Callable
 P = ParamSpec('P')
 R = TypeVar('R')
 
-def make_calls (max_calls: int = 1) -> Callable[[Callable[P, R]], Callable[P,R]]:
+def make_calls [**P, R] (max_calls: int = 1) -> Callable[[Callable[P, R]], Callable[P,R]]:
     def decorator(func: Callable[P, R]) -> Callable[P, R]:
         calls = 0
 
